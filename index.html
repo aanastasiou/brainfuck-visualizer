@@ -105,8 +105,10 @@
     <script type="text/javascript">
         $(function () {
             // Check that the URL has a valid source string
+            var prog_form = new RegExp('(?<code>[+-<>,\\.\\[\\]]+)(@\\((?<wordlength>[0-9]+),(?<mem_size>[0-9]+)\\))?')
             var bf = (new URLSearchParams(window.location.search)).get('bf')
-            if (bf && (new RegExp('[+-<>,\\.\\[\\]]+')).test(bf)) {
+            if (bf && prog_form.test(bf)) {
+                var code_info = bf.match(prog_form)
                 document.getElementById("source").innerHTML = bf
             }
 

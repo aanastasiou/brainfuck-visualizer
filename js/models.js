@@ -4,17 +4,14 @@ Backbone.Model.prototype.increase = function (key, addition) {
 
 var Cell = Backbone.Model.extend({
 	defaults: {
-		value: 0
+		value: 0,
+		wordlength: 8
 	},
 	inc: function (c) {
-		this.set("value", (this.get("value") + c)%256);
+		this.set("value", (this.get("value") + c) % (1 << this.get("wordlength")));
 	},
 	dec: function (c) {
-		var val = this.get("value") - c;
-		if (val < 0) {
-		  val += 256*(Math.ceil(-val/256));
-		}
-		this.set("value", val);
+		this.set("value", (this.get("value") - c) % (1 << this.get("wordlength")));
 	},
 	put: function (c) {
 		this.set("value", c.charCodeAt(0));
