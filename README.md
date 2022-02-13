@@ -1,19 +1,14 @@
-### Brainfuck Visualizer
+# Brainfuck Visualizer
 
-Javascript Brainfuck Interpreter + Visualizer
+Javascript [Brainfuck](https://esolangs.org/wiki/Brainfuck) Interpreter + Visualizer
 
-### What is BrainFuck?
 
-Brainfuck is a turing-complete minimal programming language. It designed to
- implement easily on any programming language.
+Couple of years ago, I was looking for a brainfuck visualiser for an experiment I was running 
+and this was the best I came across. Unfortunately, by the time I looked for it again, the 
+repository was gone. I managed to find this from a third user who had cloned it and based my 
+derivation on it.
 
-Brainfuck language consist with a simple machine model, a pointer and 8
-commands (character).
-
-More information:
-<http://en.wikipedia.org/wiki/Brainfuck>
-
-### Contributors
+The original version listed the following as contributors:
 
 - Fatih Erikli ([fatiherikli](http://github.com/fatiherikli))
 - Henry Heikkinen ([rce](https://github.com/rce))
@@ -22,5 +17,3 @@ More information:
 - Dwillie ([dwille](https://github.com/dwillie))
 - Eugene Sharygin ([eush77](https://github.com/eush77))
 
-### Demo
-<http://fatiherikli.github.io/brainfuck-visualizer>
