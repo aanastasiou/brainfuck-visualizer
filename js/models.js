@@ -11,7 +11,8 @@ var Cell = Backbone.Model.extend({
 		this.set("value", (this.get("value") + c) % (1 << this.get("wordlength")));
 	},
 	dec: function (c) {
-		this.set("value", (this.get("value") - c) % (1 << this.get("wordlength")));
+                current_value = this.get("value")
+		this.set("value", ((current_value - c) < 0)?((current_value-c)+(1 << this.get("wordlength"))):(current_value-c) % (1 << this.get("wordlength")));
 	},
 	put: function (c) {
 		this.set("value", c.charCodeAt(0));
