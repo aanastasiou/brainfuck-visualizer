@@ -105,18 +105,21 @@
     <script type="text/javascript">
         $(function () {
             // Check that the URL has a valid source string
-            var prog_form = new RegExp('(?<code>[+-<>,\\.\\[\\]]+)(@\\((?<wordlength>[0-9]+),(?<mem_size>[0-9]+)\\))?')
-            var bf = (new URLSearchParams(window.location.search)).get('bf')
-            var wordlength = null
-            var mem_size = null
+            var prog_form = new RegExp('(?<code>[+-<>,\\.\\[\\]]+)(@\\((?<wordlength>[0-9]+):(?<mem_size>[0-9]+)\\))?');
+            var bf = (new URLSearchParams(window.location.search)).get('bf');
+            var wordlength = 8;
+            var mem_size = 27;
             if (bf && prog_form.test(bf)) {
-                var code_info = bf.match(prog_form)
-                document.getElementById("source").innerHTML = code_info.groups["code"]
-                wordlength = code_info.groups["wordlength"]
-                mem_size = code_info.groups["mem_size"]
+                var code_info = bf.match(prog_form);
+                document.getElementById("source").innerHTML = code_info.groups["code"];
+                if (code_info.groups["wordlength"]){
+                    wordlength = code_info.groups["wordlength"];
+                    mem_size = code_info.groups["mem_size"];
+                }
             }
 
-            var cells = _(27).times($.noop);
+            //var cells = _(27).times($.noop);
+            var cells = _(mem_size).times(function(n){return new Cell({wordlength:wordlength});});
             var tape = new Tape(cells);
             var pointer = new Pointer();
             new InterpreterView({
