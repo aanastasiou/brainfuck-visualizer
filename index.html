@@ -107,9 +107,13 @@
             // Check that the URL has a valid source string
             var prog_form = new RegExp('(?<code>[+-<>,\\.\\[\\]]+)(@\\((?<wordlength>[0-9]+),(?<mem_size>[0-9]+)\\))?')
             var bf = (new URLSearchParams(window.location.search)).get('bf')
+            var wordlength = null
+            var mem_size = null
             if (bf && prog_form.test(bf)) {
                 var code_info = bf.match(prog_form)
-                document.getElementById("source").innerHTML = bf
+                document.getElementById("source").innerHTML = code_info.groups["code"]
+                wordlength = code_info.groups["wordlength"]
+                mem_size = code_info.groups["mem_size"]
             }
 
             var cells = _(27).times($.noop);
