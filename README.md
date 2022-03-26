@@ -10,11 +10,11 @@ Brainfuck Interpreter & Visualizer in Javascript.
 ...and, two additional features over the original version:
 
 1. Load code via URL parameter `bf`
-   - Check out this simple addition example: [`/?bf=+>+[-<+>]`](https://aanastasiou.github.io/brainfuck-visualizer/?bf=%2B%3E%2B%2B%5B-%3C%2B%3E%5D#)
+   - Check out this simple addition example: [`+>+[-<+>]`](https://aanastasiou.github.io/brainfuck-visualizer/?bf=%2B%3E%2B%2B%5B-%3C%2B%3E%5D#)
    
 2. Modify wordlength & memory size by appending `@(wordlength:memory_size)` at the end 
    of a brainfuck program.
-   - Number 9 (in base-10) over 3-bit memory cells (mod-8):[`+++++++++@(3,27)`](https://aanastasiou.github.io/brainfuck-visualizer/?bf=%2B%2B%2B%2B%2B%2B%2B%2B%2B%3E%2B%2B%5B-%3C%2B%3E%5D%40(3%3A27)#
+   - Number 9 (in base-10) over 3-bit memory cells (mod-8): [`+++++++++@(3,27)`](https://aanastasiou.github.io/brainfuck-visualizer/?bf=%2B%2B%2B%2B%2B%2B%2B%2B%2B%3E%2B%2B%5B-%3C%2B%3E%5D%40(3%3A27)#)
    - Addition over a minimal 5 cell "tape", with 3 bits per cell [`+++++++++>++++[-<+>]@(3:5)`](https://aanastasiou.github.io/brainfuck-visualizer/?bf=%2B%2B%2B%2B%2B%2B%2B%2B%2B%3E%2B%2B%2B%2B%5B-%3C%2B%3E%5D%40(3%3A5)#) 
 
 
